@@ -1,0 +1,8 @@
+def go(arr):
+    if len(arr) < 2:
+       return arr
+
+    pivit = arr[0]
+    less =  [i for i in arr[1:] if i < pivit]
+    more = [i for i in arr[1:] if i >= pivit]
+    return go(less) + [pivit] + go(more)
